@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mada:wght@200..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #eeeed9;
+        --navbar-bg: #ffffff;
+        --navbar-circle-color: #4523c2;
+        --nav-secondary-color: #1a1919;
+        --radius-sm: 8px;
+        --radius-md: 15px;
+        --radius-lg: 50px;
+        --nav-text-primary: #808080;
+        --border: 1px solid #0f0f0f;
+        --border-secondary: 1px solid #b1b1b1;
+        --btn-color: #1e6ce2;
+        --secondary-color: #3c364e;
+        --tertiary-color: #000000;
+        --fourth-color: #818181;
+        --star-color: #f89b21;
+        --fifth-color: #4e4e4e;
+        --footer-color: #edffed;
+        --line-color: #a1a1a1;
+        --footware-color: #141007;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg);
+      }
+
+      /* ── NAVBAR ── */
+      .navbar {
+        background-color: var(--navbar-bg);
+        padding: 0 100px;
+      }
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 30px;
+        gap: 16px;
+      }
+
+      /* Hamburger (hidden on desktop) */
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        color: var(--nav-secondary-color);
+      }
+
+      .circle {
+        width: 10px;
+        height: 10px;
+        background-color: var(--navbar-circle-color);
+        border-radius: var(--radius-lg);
+        flex-shrink: 0;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo h2 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 41px;
+        font-family: "Manrope", sans-serif;
+        white-space: nowrap;
+      }
+
+      .nav-links ul {
+        list-style: none;
+        display: flex;
+        gap: 0;
+      }
+      .nav-links ul li {
+        display: inline-block;
+        margin-right: 25px;
+      }
+      .nav-links ul li a {
+        font-size: 16px;
+        text-decoration: none;
+        color: var(--nav-text-primary);
+        font-family: "Manrope", sans-serif;
+      }
+      .nav-links ul li a:hover {
+        color: var(--navbar-circle-color);
+      }
+
+      .search {
+        display: flex;
+        position: relative;
+      }
+      .search input {
+        padding: 12px 48px;
+        border-radius: 7px;
+        border: var(--border);
+        outline: none;
+        font-family: "Manrope", sans-serif;
+        width: 100%;
+      }
+      .search i {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: var(--nav-secondary-color);
+      }
+
+      .notifications {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      .notifications .heart-btn,
+      .shopping-cart,
+      .profile-settings {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+
+      /* Mobile nav drawer */
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background-color: var(--navbar-bg);
+        padding: 16px 30px 20px;
+        gap: 12px;
+        border-top: 1px solid #eee;
+      }
+      .mobile-nav.open {
+        display: flex;
+      }
+      .mobile-nav a {
+        font-size: 16px;
+        text-decoration: none;
+        color: var(--nav-text-primary);
+        font-family: "Manrope", sans-serif;
+        padding: 6px 0;
+      }
+      .mobile-nav .search {
+        margin-top: 8px;
+      }
+      .mobile-nav .search input {
+        width: 100%;
+      }
+
+      /* ── HERO ── */
+      .hero-section {
+        background: linear-gradient(90deg, #141d30 57.78%, #202646 114.36%);
+        padding: 0 100px;
+      }
+      .hero-container {
+        padding: 5px 30px;
+      }
+      .sub-title {
+        margin-top: 100px;
+        color: var(--bg);
+      }
+      .sub-title h3 {
+        font-weight: 300;
+        font-size: 20px;
+        font-family: "Mada", sans-serif;
+        line-height: 26px;
+        letter-spacing: 0.03em;
+      }
+      .main-title {
+        margin-top: 10px;
+        color: var(--bg);
+      }
+      .main-title h1 {
+        font-family: "Mada", sans-serif;
+        font-weight: 600;
+        font-size: 80px;
+        line-height: 95px;
+      }
+      .tagline {
+        margin-top: -5px;
+        color: var(--bg);
+      }
+      .tagline p {
+        font-family: "Mada";
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 29px;
+      }
+      .action-btns {
+        margin-top: 50px;
+        margin-bottom: 65px;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .action-btns .main-btn {
+        padding: 14px 30px;
+        border-radius: var(--radius-sm);
+        background-color: var(--btn-color);
+        color: var(--bg);
+        border: none;
+        outline: none;
+        font-family: "Manrope", sans-serif;
+        cursor: pointer;
+      }
+      .action-btns .secondary-btn {
+        padding: 14px 30px;
+        border-radius: var(--radius-sm);
+        background-color: var(--secondary-color);
+        color: var(--bg);
+        border: none;
+        outline: none;
+        font-family: "Manrope", sans-serif;
+        cursor: pointer;
+      }
+
+      /* ── FOOTWEAR CATEGORY ── */
+      .footware {
+        padding: 10px 100px;
+      }
+      .footware-container {
+        padding: 0 30px;
+        position: relative;
+      }
+      .footware-title {
+        font-family: "Manrope", sans-serif;
+        font-size: 18px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+      }
+      .footware-selection-card img {
+        width: 250px;
+        border-radius: var(--radius-sm);
+      }
+      .footware-selection-card h3 {
+        position: absolute;
+        bottom: 50px;
+        left: 45px;
+        font-family: "Mada", sans-serif;
+        font-size: 18px;
+        color: var(--footware-color);
+      }
+      .shop-button {
+        position: relative;
+        flex-direction: row;
+      }
+      .shop-button h4 {
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        color: var(--footware-color);
+      }
+      .shop-button i {
+        position: absolute;
+        bottom: 27px;
+        left: 53px;
+        color: var(--footware-color);
+      }
+
+      /* ── PRODUCT CARDS ── */
+      .product-cards {
+        padding: 10px 100px 40px 100px;
+      }
+      .cards-container {
+        padding: 0 30px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .view-all-btn {
+        position: relative;
+        flex-direction: row;
+        padding-top: 50px;
+      }
+      .view-all-btn h4 {
+        position: absolute;
+        right: 50px;
+        top: 18px;
+        color: var(--tertiary-color);
+        font-family: "Manrope", sans-serif;
+        font-size: 14px;
+      }
+      .view-all-btn i {
+        position: absolute;
+        right: 30px;
+        top: 28px;
+        color: var(--tertiary-color);
+      }
+      .card {
+        width: 23%;
+        min-width: 220px;
+        padding: 10px 12px;
+        border: var(--border-secondary);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        box-shadow: 0 5px 14px rgba(51, 102, 255, 0.24);
+        transition: 0.2s ease;
+      }
+      .card:hover {
+        box-shadow: 0 5px 14px rgba(51, 102, 255, 0.5);
+      }
+      .card img {
+        width: 100%;
+        height: 300px;
+        border-radius: var(--radius-md);
+        object-fit: cover;
+      }
+      .image-container {
+        position: relative;
+      }
+      .discount-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        background: #ff3b30;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .favorite-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #444;
+        transition: 0.3s;
+      }
+      .card-description {
+        margin-top: 10px;
+      }
+      .card-description span {
+        font-family: "Manrope", sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        color: var(--fourth-color);
+      }
+      .card-description h5 {
+        font-family: "Manrope", sans-serif;
+        padding-top: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--tertiary-color);
+      }
+      .card-description .card-star {
+        font-size: 12px;
+        color: var(--star-color);
+        padding-top: 3px;
+      }
+      .card-description h4 {
+        padding-top: 5px;
+        font-family: "Manrope", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+      }
+      .card-description .add-cart {
+        margin-top: 6px;
+        margin-bottom: 7px;
+        padding: 10px 20px;
+        border-radius: var(--radius-sm);
+        background-color: var(--btn-color);
+        color: white !important;
+        border: none;
+        outline: none;
+        font-family: "Manrope", sans-serif;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      /* ── BANNER ── */
+      .banner-section {
+        padding: 10px 30px;
+        background-color: var(--btn-color);
+      }
+      .banner-container {
+        padding: 5px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+      }
+      .banner-info {
+        margin-top: 65px;
+        margin-bottom: 50px;
+      }
+      .banner-info h4 {
+        font-family: "Manrope", sans-serif;
+        font-size: 18px;
+        color: var(--bg);
+        font-weight: 500;
+      }
+      .banner-info p {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        font-family: "Mada", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--bg);
+      }
+      .banner-btn {
+        padding: 14px 45px;
+        font-size: 14px;
+        border-radius: var(--radius-sm);
+        outline: none;
+        border: none;
+        box-shadow:
+          7px 7px 10px rgba(0, 0, 0, 0.15),
+          7px 7px 10px rgba(0, 0, 0, 0.2);
+        transition: 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+        align-self: center;
+      }
+      .banner-btn:hover {
+        box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.45);
+      }
+
+      /* ── FOOTER ── */
+      .footer-section {
+        padding: 10px 100px;
+        background-color: var(--footer-color);
+      }
+      .footer-container {
+        padding: 5px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 30px;
+      }
+      .footer-logo {
+        flex: 1 1 200px;
+      }
+      .footer-logo p {
+        padding-top: 10px;
+        font-family: "Mada", sans-serif;
+        color: var(--fifth-color);
+        line-height: 20px;
+      }
+      .shop-footer,
+      .support-footer,
+      .company-footer {
+        flex: 1 1 120px;
+        padding-top: 10px;
+        margin-left: 0;
+      }
+      .shop-footer h4,
+      .support-footer h4,
+      .company-footer h4 {
+        font-family: "Mada", sans-serif;
+        font-size: 18px;
+      }
+      .shop-footer ul,
+      .support-footer ul,
+      .company-footer ul {
+        list-style-type: none;
+        padding-top: 10px;
+      }
+      .shop-footer li,
+      .support-footer li,
+      .company-footer li {
+        padding-top: 10px;
+        color: var(--fifth-color);
+        margin-bottom: 10px;
+      }
+
+      hr {
+        border: none;
+        height: 0.5px;
+        background-color: var(--line-color);
+        margin: 20px 30px;
+      }
+      .copyright-section {
+        margin-top: 20px;
+        padding: 5px 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .copyright h4 {
+        color: var(--fifth-color);
+        font-family: "Mada", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .privacy,
+      .terms {
+        font-family: "Mada", sans-serif;
+        font-size: 15px;
+        color: var(--fifth-color);
+        padding-left: 0;
+      }
+
+      /* ════════════════════════════════════════
+       TABLET  (≤ 1024px)
+    ════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .navbar {
+          padding: 0 30px;
+        }
+        .hero-section,
+        .footware,
+        .product-cards,
+        .banner-section,
+        .footer-section {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+        .hero-container,
+        .footware-container,
+        .cards-container,
+        .banner-container,
+        .footer-container {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .main-title h1 {
+          font-size: 56px;
+          line-height: 68px;
+        }
+
+        .card {
+          width: 47%;
+        }
+
+        .search input {
+          width: 180px;
+        }
+      }
+
+      /* ════════════════════════════════════════
+       MOBILE  (≤ 768px)
+    ════════════════════════════════════════ */
+      @media (max-width: 768px) {
+        /* --- Navbar --- */
+        .navbar {
+          padding: 0 16px;
+        }
+        .nav-container {
+          padding: 12px 0;
+          flex-wrap: wrap;
+        }
+
+        /* Hide desktop links and search in main bar */
+        .nav-links,
+        .search {
+          display: none;
+        }
+
+        /* Show hamburger */
+        .hamburger {
+          display: block;
+        }
+
+        /* --- Hero --- */
+        .hero-section {
+          padding: 0 16px;
+        }
+        .hero-container {
+          padding: 0;
+        }
+        .sub-title {
+          margin-top: 50px;
+        }
+        .sub-title h3 {
+          font-size: 15px;
+        }
+        .main-title h1 {
+          font-size: 36px;
+          line-height: 46px;
+        }
+        .tagline p {
+          font-size: 16px;
+        }
+        .action-btns {
+          margin-top: 30px;
+          margin-bottom: 40px;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .action-btns .main-btn,
+        .action-btns .secondary-btn {
+          width: 100%;
+          text-align: center;
+        }
+
+        /* --- Footwear category --- */
+        .footware {
+          padding: 10px 16px;
+        }
+        .footware-container {
+          padding: 0;
+        }
+        .footware-selection-card img {
+          width: 100%;
+        }
+
+        /* --- Cards --- */
+        .product-cards {
+          padding: 10px 16px;
+        }
+        .cards-container {
+          padding: 0;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .card {
+          width: 100%;
+          min-width: unset;
+        }
+        .card img {
+          height: 220px;
+        }
+        .view-all-btn h4 {
+          right: 10px;
+        }
+        .view-all-btn i {
+          right: -5px;
+        }
+
+        /* --- Banner --- */
+        .banner-section {
+          padding: 20px 16px;
+        }
+        .banner-container {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0;
+        }
+        .banner-info {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        .banner-btn {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        /* --- Footer --- */
+        .footer-section {
+          padding: 10px 16px;
+        }
+        .footer-container {
+          flex-direction: column;
+          gap: 24px;
+          padding: 0;
+          margin-top: 20px;
+        }
+        .footer-logo p br {
+          display: none;
+        }
+        .copyright-section {
+          padding: 5px 0;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        hr {
+          margin: 16px 0;
+        }
+      }
+
+      /* ════════════════════════════════════════
+       SMALL MOBILE  (≤ 400px)
+    ════════════════════════════════════════ */
+      @media (max-width: 400px) {
+        .logo h2 {
+          font-size: 22px;
+        }
+        .main-title h1 {
+          font-size: 30px;
+          line-height: 38px;
+        }
+        .card img {
+          height: 180px;
+        }
+      }
+
+      .favorite-btn i.active {
+        color: red;
+      }
+      /* date on navbar styling */
+      #dateDisplay {
+        text-align: center;
+        padding-left: 20px;
+      }
+      /* discount styling */
+      .discountEnd {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: red;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="circle"></div>
+          <h2>SHOPIFY</h2>
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="">Shop</a></li>
+            <li><a href="">Collections</a></li>
+            <li><a href="">Sale</a></li>
+            <li><a href="">About</a></li>
+          </ul>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search products..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="notifications">
+          <button class="heart-btn">
+            <i class="fa-regular fa-heart fa-lg"></i>
+          </button>
+          <button class="shopping-cart">
+            <i class="fa-solid fa-cart-shopping fa-lg"></i>
+          </button>
+          <button class="profile-settings">
+            <i class="fa-solid fa-gear fa-lg"></i>
+          </button>
+          <div id="dateDisplay"></div>
+        </div>
+        <!-- hamburger (mobile only) -->
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <!-- mobile drawer -->
+      <div class="mobile-nav" id="mobileNav">
+        <a href="">Shop</a>
+        <a href="">Collections</a>
+        <a href="">Sale</a>
+        <a href="">About</a>
+        <div class="search">
+          <input type="text" placeholder="Search products..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- hero section -->
+    <div class="hero-section">
+      <div class="hero-container">
+        <div class="sub-title"><h3>NEW SEASON - 2026</h3></div>
+        <div class="main-title">
+          <h1>
+            Crafted for the <br />
+            Considered life.
+          </h1>
+        </div>
+        <div class="tagline">
+          <p>
+            Goods made with intention, built to last. Shop essentials that
+            <br />
+            earn their place in your routine
+          </p>
+        </div>
+        <div class="action-btns">
+          <button class="main-btn">Shop now</button>
+          <button class="secondary-btn">View Collections</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- category section -->
+    <div class="footware">
+      <div class="footware-container">
+        <h2 class="footware-title">Shop by category</h2>
+        <div class="footware-selection-card">
+          <img src="images/shoes.jpg" alt="Footwear category" />
+          <h3>Footware</h3>
+          <div class="shop-button">
+            <h4>Shop</h4>
+            <i class="fa-solid fa-arrow-right fa-sm"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- product cards -->
+    <div class="product-cards">
+      <div class="view-all-btn">
+        <h4>View all</h4>
+        <i class="fa-solid fa-arrow-right fa-sm"></i>
+      </div>
+      <div class="cards-container">
+        <!-- card 1 -->
+        <div class="card">
+          <div class="image-container">
+            <img src="images/new balance.jpg" alt="New Balance shoe" />
+            <div class="discount-badge">-6%</div>
+            <button
+              class="favorite-btn"
+              onclick="changeIcon(this.querySelector('i'))"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="card-description">
+            <span>FOOTWARE</span>
+            <h5>New Balance</h5>
+            <div class="card-star">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Ksh 3,000</h4>
+            <button class="add-cart" onclick="addToCart(this)">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+            <p class="discountEnd"></p>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="card">
+          <div class="image-container">
+            <img src="images/adidas.jpg" alt="Adidas shoe" />
+            <div class="discount-badge">-10%</div>
+            <button
+              class="favorite-btn"
+              onclick="changeIcon(this.querySelector('i'))"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="card-description">
+            <span>FOOTWARE</span>
+            <h5>Adidas</h5>
+            <div class="card-star">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-regular fa-star"></i>
+            </div>
+            <h4>Ksh 2,500</h4>
+            <button class="add-cart" onclick="addToCart(this)">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+            <p class="discountEnd"></p>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div class="card">
+          <div class="image-container">
+            <img src="images/vans.jpg" alt="Vans shoe" />
+            <div class="discount-badge">-5%</div>
+            <button
+              class="favorite-btn"
+              onclick="changeIcon(this.querySelector('i'))"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="card-description">
+            <span>FOOTWARE</span>
+            <h5>Nike</h5>
+            <div class="card-star">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Ksh 3,000</h4>
+            <button class="add-cart" onclick="addToCart(this)">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+            <p class="discountEnd"></p>
+          </div>
+        </div>
+        <!-- card 4 -->
+        <div class="card">
+          <div class="image-container">
+            <img src="images/nike.jpg" alt="Nike shoe" />
+            <div class="discount-badge">-6%</div>
+            <button
+              class="favorite-btn"
+              onclick="changeIcon(this.querySelector('i'))"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+          <div class="card-description">
+            <span>FOOTWARE</span>
+            <h5>Vans Old School</h5>
+            <div class="card-star">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <h4>Ksh 3,000</h4>
+            <button class="add-cart" onclick="addToCart(this)">
+              <i class="fa-solid fa-cart-shopping"></i> Add to cart
+            </button>
+            <p class="discountEnd"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- banner -->
+    <div class="banner-section">
+      <div class="banner-container">
+        <div class="banner-info">
+          <h4>Free shipping on orders above Ksh 5,000</h4>
+          <p>Delivered in 2-3 business days, Kenya-wide.</p>
+        </div>
+        <button class="banner-btn">Start Shopping</button>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer-section">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <div class="logo">
+            <div class="circle"></div>
+            <h2>SHOPIFY</h2>
+          </div>
+          <p>
+            Thoughtfully made goods for people who care about quality and craft
+          </p>
+        </div>
+        <div class="shop-footer">
+          <h4>Shop</h4>
+          <ul>
+            <li>All products</li>
+            <li>Collections</li>
+            <li>Sales</li>
+            <li>New Arrivals</li>
+          </ul>
+        </div>
+        <div class="support-footer">
+          <h4>Support</h4>
+          <ul>
+            <li>FAQ</li>
+            <li>Shipping policy</li>
+            <li>Returns</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div class="company-footer">
+          <h4>Company</h4>
+          <ul>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Careers</li>
+            <li>Press</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright-section">
+        <div class="copyright">
+          <h4>2026 Shopify Demo. All rights reserved</h4>
+        </div>
+        <div class="privacy"><h4>Privacy</h4></div>
+        <div class="terms"><h4>Terms</h4></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById("mobileNav");
+        nav.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
