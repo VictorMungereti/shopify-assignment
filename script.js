@@ -22,22 +22,6 @@ function changeIcon(icon) {
   }
 }
 
-//date display at the top in navbar
-
-// const today = new Date();
-// document.getElementById("dateDisplay").textContent = today.toLocaleDateString();
-
-// const today = new Date();
-// document.getElementById("dateDisplay").textContent = today.toLocaleDateString(
-//   "en-US",
-//   {
-//     weekday: "short",
-//     year: "numeric",
-//     month: "short",
-//     day: "numeric",
-//   },
-// );
-
 const today = new Date(); // its used by both date at top and discount
 
 // Show today's full date at the top
@@ -52,18 +36,14 @@ document.getElementById("dateDisplay").textContent = today.toLocaleDateString(
 );
 
 // discount
-const endDate = new Date(today);
-endDate.setDate(today.getDate() + 7);
-const endDateText =
-  "Offer ends at: " +
-  endDate.toLocaleDateString("en-US", {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
 
-// Apply it to EVERY element with class "discountEnd"
-document.querySelectorAll(".discountEnd").forEach(function (element) {
-  element.textContent = endDateText;
+document.querySelectorAll(".card-description").forEach(function (card) {
+  const original = Number(card.dataset.original);
+  const discounted = Number(card.dataset.discounted);
+
+  const discountPercent = Math.round(
+    ((original - discounted) / original) * 100,
+  );
+
+  card.querySelector(".discount").textContent = "-" + discountPercent + "%";
 });

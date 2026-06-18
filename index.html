@@ -625,6 +625,7 @@
           margin-bottom: 40px;
           flex-direction: column;
           gap: 14px;
+          padding-bottom: 18px;
         }
         .action-btns .main-btn,
         .action-btns .secondary-btn {
@@ -750,21 +751,6 @@
         letter-spacing: 1px;
       }
 
-      /* position: absolute;
-        bottom: 61px;
-        left: 190px;
-        width: 30px;
-        height: 22px;
-        background: #f7d8ab;
-        color: rgb(248, 154, 13);
-        border-radius: 20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Manrope", sans-serif;
-        font-size: 12px;
-        font-weight: 700; */
-
       #originalPrice {
         font-size: 13px;
         text-decoration: line-through;
@@ -879,16 +865,20 @@
               <i class="fa-regular fa-heart"></i>
             </button>
           </div>
-          <div class="card-description">
+          <div
+            class="card-description"
+            data-original="5000"
+            data-discounted="3000"
+          >
             <span>FOOTWARE</span>
             <h5>New Balance</h5>
             <div class="card-star">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              ><i class="fa-regular fa-star"></i>
             </div>
             <h4>Ksh 3,000 <span id="originalPrice">Ksh 5,000</span></h4>
-            <div class="discount">-40%</div>
+            <div class="discount"></div>
             <button class="add-cart" onclick="addToCart(this)">
               <i class="fa-solid fa-cart-shopping"></i> Add to cart
             </button>
@@ -906,16 +896,20 @@
               <i class="fa-regular fa-heart"></i>
             </button>
           </div>
-          <div class="card-description">
+          <div
+            class="card-description"
+            data-original="4000"
+            data-discounted="3000"
+          >
             <span>FOOTWARE</span>
             <h5>Adidas</h5>
             <div class="card-star">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i
               ><i class="fa-regular fa-star"></i>
             </div>
-            <h4>Ksh 2,500 <span id="originalPrice">Ksh 3,500</span></h4>
-            <div class="discount">-29%</div>
+            <h4>Ksh 4,000 <span id="originalPrice">Ksh 3,000</span></h4>
+            <div class="discount"></div>
             <button class="add-cart" onclick="addToCart(this)">
               <i class="fa-solid fa-cart-shopping"></i> Add to cart
             </button>
@@ -933,16 +927,20 @@
               <i class="fa-regular fa-heart"></i>
             </button>
           </div>
-          <div class="card-description">
+          <div
+            class="card-description"
+            data-original="5000"
+            data-discounted="3000"
+          >
             <span>FOOTWARE</span>
-            <h5>Nike</h5>
+            <h5>Vans Old School</h5>
             <div class="card-star">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i>
             </div>
             <h4>Ksh 3,000 <span id="originalPrice">Ksh 5,000</span></h4>
-            <div class="discount">-40%</div>
+            <div class="discount"></div>
             <button class="add-cart" onclick="addToCart(this)">
               <i class="fa-solid fa-cart-shopping"></i> Add to cart
             </button>
@@ -960,16 +958,20 @@
               <i class="fa-regular fa-heart"></i>
             </button>
           </div>
-          <div class="card-description">
+          <div
+            class="card-description"
+            data-original="2500"
+            data-discounted="2000"
+          >
             <span>FOOTWARE</span>
-            <h5>Vans Old School</h5>
+            <h5>Nike</h5>
             <div class="card-star">
               <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
               ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ><i class="fa-solid fa-star"></i>
+              ><i class="fa-regular fa-star"></i>
             </div>
-            <h4>Ksh 2,500 <span id="originalPrice">Ksh 3,500</span></h4>
-            <div class="discount">-29%</div>
+            <h4>Ksh 2,000 <span id="originalPrice">Ksh 2,500</span></h4>
+            <div class="discount"></div>
             <button class="add-cart" onclick="addToCart(this)">
               <i class="fa-solid fa-cart-shopping"></i> Add to cart
             </button>
