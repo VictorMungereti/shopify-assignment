@@ -148,6 +148,29 @@
         cursor: pointer;
       }
 
+      /* badge styling */
+
+      .notifications button {
+        position: relative; /* needed so badge positions correctly */
+      }
+
+      .badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        background: red;
+        color: white;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+      }
+
       /* Mobile nav drawer */
       .mobile-nav {
         display: none;
@@ -585,7 +608,7 @@
           padding: 0 16px;
         }
         .nav-container {
-          padding: 12px 0;
+          padding: 2px 0;
           flex-wrap: wrap;
         }
 
@@ -602,13 +625,13 @@
 
         /* --- Hero --- */
         .hero-section {
-          padding: 0 16px;
+          padding: 15px 5px 0;
         }
         .hero-container {
           padding: 0;
         }
         .sub-title {
-          margin-top: 50px;
+          margin-top: 0px;
         }
         .sub-title h3 {
           font-size: 15px;
@@ -780,9 +803,11 @@
         <div class="notifications">
           <button class="heart-btn">
             <i class="fa-regular fa-heart fa-lg"></i>
+            <span class="badge" id="fav-badge">0</span>
           </button>
           <button class="shopping-cart">
             <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <span class="badge" id="cart-badge">0</span>
           </button>
           <button class="profile-settings">
             <i class="fa-solid fa-gear fa-lg"></i>
